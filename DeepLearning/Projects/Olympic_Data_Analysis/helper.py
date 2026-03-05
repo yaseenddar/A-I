@@ -66,3 +66,47 @@ def event_based_data(df,col,colName):
         .reset_index(name=colName)
         .sort_values('Year')
          )
+def country_based_data(final_df, country, colName=''):
+   final_df["Total"] = final_df["Gold"] + final_df["Silver"] + final_df["Bronze"]
+   country_df = final_df.groupby(['region',"Year"])[["Total"]].sum().sort_values(by='Year',ascending=True).reset_index()
+   if country == "Overall":
+       return country_df
+   else:
+       return country_df[country_df['region'] == country]
+
+def top_10_data(final_df,sport):
+    # add total column
+    final_df["Total"] = final_df["Gold"] + final_df["Silver"] + final_df["Bronze"]
+    final_df.dropna(subset='Medal')
+    # Step 1: Rank all countries by total medals
+    new_df = (
+        final_df.groupby('Name')[["Total"]]
+        .sum()
+        .sort_values(by="Total", ascending=False)
+        .reset_index()
+    )
+
+    # Step 2: Merge, then break down by Sport — keep both Gold and Total
+    result = (
+        final_df.merge(new_df["Name"], on="Name")          # bring in top context
+        .groupby(["Name", "Sport","NOC"])[["Total"]]     # ✅ keep Total so sort works
+        .sum()
+        .sort_values(by="Total", ascending=False)           # ✅ now valid
+        .reset_index().head(10)
+    )
+    if(sport == "Overall"):
+        return result
+    else:
+        return result[result["Sport"] == sport]
+
+# heatmap of countries
+def country_wise_data(final_df,country):
+    result = (
+    final_df
+    .drop_duplicates(subset=["region", "Event", "Games", "Medal", "City", "Year", "NOC"])
+    .dropna(subset=["Medal"])                                    # ✅ list, not string
+    .pipe(lambda df: df[
+        (df["region"] == country)        # ✅ & with parentheses, scoped to chain
+    ]))
+
+    return result.pivot_table(index="Sport",columns="Year",values="Medal",aggfunc="count").fillna(0)

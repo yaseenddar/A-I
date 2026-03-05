@@ -4,6 +4,9 @@ import preprocess
 import helper
 import os
 import plotly.express as px
+import plotly.figure_factory as ff
+import seaborn as sns
+import matplotlib.pyplot as plt
 # ----------------------------
 # Load Data
 # ----------------------------
@@ -85,23 +88,61 @@ elif user_input == "Overall Analysis":
         st.subheader(f"{athletes_over_years}")
         
         # Number of Atheletes in every Event Year Wise 
-    year_wise_athlete_count = helper.event_based_data(df_filtered,'Name','Atheletes');
-    fig = px.line(year_wise_athlete_count,x='Year',y="Atheletes" )
+    copied_df = df_filtered.copy()
+    year_wise_athlete_count = helper.event_based_data(df_processed,'NOC','Countries');
+    fig = px.line(year_wise_athlete_count,x='Year',y="Countries" )
     st.plotly_chart(fig) 
 
     #  Nombe of Sports Events in Event
-    year_wise_sports_count = helper.event_based_data(df_filtered,'Sport','Sports')
+    year_wise_sports_count = helper.event_based_data(df_processed,'Sport','Sports')
     fig = px.line(year_wise_sports_count,x='Year',y='Sports') 
     st.plotly_chart(fig)
 
+    # Age wise eprobablity
+    # Age wise probability distribution
+    age_data = df_filtered["Age"].dropna()
+
+    fig2 = ff.create_distplot(
+    [age_data],                  # ✅ list of arrays
+    ['Age Distribution'],
+    show_hist=False,
+    show_rug=False
+    )
+    st.plotly_chart(fig2.show())  
 
 elif user_input == "Country-wise Analysis":
-    top_10 = helper.top_10_countries(df_filtered)
-    st.subheader("Top 10 Countries")
-    st.dataframe(top_10)
+    # country_list = ["Overall"] + sorted(df_processed["region"].dropna().unique().tolist())
+    # country = st.sidebar.selectbox("Select Country", country_list)  # ✅ defined here
 
+    st.title(f"{country} Analysis")                                  # ✅ f-string
+
+    copied_df = df_filtered.copy()                                  # ✅ use df_processed, not df_filtered
+
+    year_wise_medal_count = helper.country_based_data(copied_df, country)  # ✅ pass country
+
+    st.dataframe(year_wise_medal_count)                       # ✅ show result, not raw df_filtered
+    st.subheader(country+" Year/Medal-Analysis")
+    fig = px.line(year_wise_medal_count, x="Year", y="Total")
+    st.plotly_chart(fig)
+  
+    # heatmap for the country
+
+    st.subheader("HeatMap of ",country+"data")
+    result = helper.country_wise_data(copied_df,country)
+
+    fig, ax = plt.subplots(figsize=(20, 15))     # ✅ control width x height
+
+
+    sns.heatmap(result,annot=True)
+    st.pyplot(fig)
 
     # graph
 
 elif user_input == "Athlete-wise Analysis":
-    st.write("Feature coming soon 🚀")
+    sportList = ["Overall"] + sorted(df_filtered["Sport"].dropna().unique().tolist())
+    sport = st.selectbox("Select Sport", sportList)
+    st.title("TOP 10 Athletes in ",sport)
+    if sport:
+        new_data= helper.top_10_data(df_filtered,sport)
+        st.table(new_data)
+
