@@ -100,15 +100,30 @@ elif user_input == "Overall Analysis":
 
     # Age wise eprobablity
     # Age wise probability distribution
-    age_data = df_filtered["Age"].dropna()
+    # age_data = df_filtered["Age"].dropna()
 
+    # fig2 = ff.create_distplot(
+    # [age_data],                  # ✅ list of arrays
+    # ['Age Distribution'],
+    # show_hist=False,
+    # show_rug=False
+    # )
+    # st.plotly_chart(fig2.show())  
+
+    # pribability distribution 
+    df_filtered = df_filtered.drop_duplicates(subset=['Name','region'])
+    age_data = df_filtered["Age"].dropna()
+    gold_age_wise = df_filtered[df_filtered["Medal"] == "Gold"]["Age"].dropna()
+    silver_age_wise = df_filtered[df_filtered["Medal"] == "Silver"]["Age"].dropna()
+    bronze_age_wise = df_filtered[df_filtered["Medal"] == "Bronze"]["Age"].dropna()
+    weight_data = df_filtered[df_filtered["Weight"] > 70 ]["Age"].dropna()
     fig2 = ff.create_distplot(
-    [age_data],                  # ✅ list of arrays
-    ['Age Distribution'],
+    [age_data,gold_age_wise,silver_age_wise,bronze_age_wise,weight_data],                  # ✅ list of arrays
+    ['Age Distribution','Gold Analysis','Silver Analysis','Bronze Analysis','Weight Analysis'],
     show_hist=False,
     show_rug=False
     )
-    st.plotly_chart(fig2.show())  
+    st.plotly_chart(fig2)
 
 elif user_input == "Country-wise Analysis":
     # country_list = ["Overall"] + sorted(df_processed["region"].dropna().unique().tolist())
@@ -146,3 +161,24 @@ elif user_input == "Athlete-wise Analysis":
         new_data= helper.top_10_data(df_filtered,sport)
         st.table(new_data)
 
+    # Gold per sport with age distribution
+    famous_sport = df_filtered["Sport"].unique().tolist()
+
+    x = []
+    labels = []
+    for sport in famous_sport:
+        ages = df_filtered[df_filtered["Sport"] == sport]["Age"].dropna()
+        if len(ages) >= 2:  # Only include sports with at least 2 age values for KDE
+            x.append(ages)
+            labels.append(sport)
+    
+    if x:  # Only create plot if there are valid datasets
+        fig2 = ff.create_distplot(
+        x,
+        labels,
+        show_hist=False,
+        show_rug=False
+        )
+        st.plotly_chart(fig2)
+    else:
+        st.write("Not enough data to create distribution plot.")
