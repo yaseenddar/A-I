@@ -146,7 +146,7 @@ elif user_input == "Country-wise Analysis":
     result = helper.country_wise_data(copied_df,country)
 
     fig, ax = plt.subplots(figsize=(20, 15))     # ✅ control width x height
-
+    
 
     sns.heatmap(result,annot=True)
     st.pyplot(fig)

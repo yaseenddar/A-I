@@ -20,12 +20,12 @@ Provides high-level statistics including:
 #### Countries Participating Over Time
 Line chart showing the growth in participating nations across Olympic history.
 
-![Countries over Years](https://github.com/user-attachments/assets/)  <!-- Will be updated with actual screenshot -->
+![Countries over Years](assets/lineBar.png)
 
 #### Sports Events Over Time  
 Visualization of how the number of sports has evolved throughout Olympic history.
 
-![Sports over Years](https://github.com/user-attachments/assets/)  <!-- Will be updated with actual screenshot -->
+![Sports over Years](assets/lineBar2.png)
 
 #### Age Distribution Analysis
 Kernel Density Estimation (KDE) plots showing:
@@ -33,7 +33,7 @@ Kernel Density Estimation (KDE) plots showing:
 - Age distribution by medal type (Gold, Silver, Bronze)
 - Weight-based analysis
 
-![Age Distribution](https://github.com/user-attachments/assets/)  <!-- Will be updated with actual screenshot -->
+![Age Distribution](assets/probability_distribution.png)
 
 ### 3. Country-wise Analysis
 
@@ -42,9 +42,9 @@ Detailed analysis for individual countries:
 - Line chart showing medal trends over time
 - Heatmap visualization showing performance across different sports and years
 
-![Country Analysis - India](https://github.com/user-attachments/assets/)  <!-- Will be updated with actual screenshot -->
+![Country Analysis - India](assets/lineBar.png)
 
-![India Heatmap](https://github.com/user-attachments/assets/)  <!-- Will be updated with actual screenshot -->
+![India Heatmap](assets/heatmap_usa.png)
 
 ### 4. Athlete-wise Analysis
 
