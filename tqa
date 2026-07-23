@@ -1,0 +1,146 @@
+[33mcommit 0a2a4f1d73477391844354919f1ea50685aad4b8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Yaseen <daryaseen7889@gmail.com>
+Date:   Thu Jul 23 21:29:34 2026 +0530
+
+    Neural Network Changes
+
+[33mcommit 8818dfeed21feac484566256c62f908a8c5a08dc[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: e444eb5 bffc4d6
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Thu Jul 23 21:09:04 2026 +0530
+
+    Merge pull request #1 from yaseenddar/master
+    
+    Master
+
+[33mcommit bffc4d6d3891265a9649cfc7fbd558180d89fb82[m
+Merge: 3c09539 da470dd
+Author: Yaseen <daryaseen7889@gmail.com>
+Date:   Thu Jul 23 21:08:18 2026 +0530
+
+    merge the details
+
+[33mcommit 3c09539c6dfa7e62ee675e46d6b9e4fe8828ea14[m
+Author: Yaseen <daryaseen7889@gmail.com>
+Date:   Thu Jul 23 21:02:07 2026 +0530
+
+    new changes
+
+[33mcommit e444eb5c2b3a05674c8f98f2b858ba127d6d15a4[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Thu Jul 23 20:26:42 2026 +0530
+
+    neural networks
+
+[33mcommit 133fc1e10248c8c5965de3da9dcb84172f18fa2a[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Sun Jul 19 02:05:13 2026 +0530
+
+    MNIST tf->keras sequentail
+
+[33mcommit 6f96887d96900d277115c257f6cfc7dc18961119[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Sat Mar 14 19:45:01 2026 +0530
+
+    -mBreast cancer cell data
+
+[33mcommit 73a91af915cdcd8470aac3151ad10209f0f04982[m
+Merge: 69d4324 d102101
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Sun Mar 8 23:57:27 2026 +0530
+
+    Merge branch 'main' of https://github.com/yaseenddar/A-I
+
+[33mcommit 69d4324f27a44444501940470920c2990b739c8b[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Sun Mar 8 23:56:57 2026 +0530
+
+    Cancer Cell Data Neural Network PyTorch
+
+[33mcommit d1021019b85357603ea0e8a7eddae0107f97ae66[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Sat Mar 7 01:10:19 2026 +0530
+
+    Add requirements for Olympic Data Analysis project
+
+[33mcommit 9edb00321633f03dc8f5dbb5618d2480964c4f54[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Sat Mar 7 01:04:17 2026 +0530
+
+    readme edited photos
+
+[33mcommit 3f15efd094eef4609d3dd52dc5efad32cfaa3628[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Sat Mar 7 00:47:01 2026 +0530
+
+    Add README for Olympic Data Analysis project
+    
+    Added comprehensive README for Olympic Data Analysis project, detailing features, tech stack, project structure, and usage instructions.
+
+[33mcommit d2272592aba2616fa66797e94ebbdd528798a1aa[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Sat Mar 7 00:38:22 2026 +0530
+
+    Add comprehensive README for A-I repository
+    
+    Added a comprehensive README for the AI & Deep Learning journey repository, detailing project structure, features, tech stack, and how to run the application.
+
+[33mcommit 598690b0a30dba2656579475aee7373f5f804c05[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Fri Mar 6 14:55:41 2026 +0530
+
+    "Added some graphs heatmaps"
+
+[33mcommit f14321c90fc073c07552c2016b1b04c0b0c7069f[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Thu Mar 5 18:15:28 2026 +0530
+
+    changes
+
+[33mcommit 9a6744dea00b48493cc1aa2e2e577a734bedf84f[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Thu Mar 5 00:33:19 2026 +0530
+
+    new changes to olympic data analysis
+
+[33mcommit 368f6ca87069c61b8e8ac40718b0af3e83abfd04[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Mon Mar 2 23:17:11 2026 +0530
+
+    added the filters to data
+
+[33mcommit c7823553e3cb564a663c1188ad0ebd7554e0c068[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Sun Mar 1 04:26:09 2026 +0530
+
+    olympic analysis data Science
+
+[33mcommit cc4225115e7c55e61e4168e9c9db62a6a2b1c863[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Tue Feb 24 00:08:37 2026 +0530
+
+    work set up new
+
+[33mcommit 4ed981067856327f939b7489a604c2d0a12b014b[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Fri Feb 20 00:14:15 2026 +0530
+
+    Potatot disease prediction
+
+[33mcommit 6cdfeb08d5e5a10bf55f3e8afc213dc54705b0ea[m
+Author: yaseen@12 <yaseen@gmail.com>
+Date:   Sun Jan 25 16:30:20 2026 +0530
+
+    added folder structure for models
+
+[33mcommit d5ce9ea1c7afbc1d26f3217bdf6503c3cc4f32ee[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Sun Jan 25 16:26:26 2026 +0530
+
+    Created using Colab
+
+[33mcommit da470ddc9c9b309ddce750d03eb566025547695f[m
+Author: Mohammad Yaseen <142425944+yaseenddar@users.noreply.github.com>
+Date:   Sun Jan 25 13:17:46 2026 +0530
+
+    Initial commit
